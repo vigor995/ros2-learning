@@ -1,0 +1,12 @@
+# ROS 2 编译产物（能重新生成，不进仓库）
+build/
+install/
+log/
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 编辑器
+.vscode/
+.idea/
