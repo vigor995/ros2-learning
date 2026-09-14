@@ -29,9 +29,9 @@ class Talker(Node):
         # 【对应 Odin1】它也是这样 create_publisher(PointCloud2, '/odin1/pointcloud', 10)
         self.publisher_ = self.create_publisher(String, 'chatter', 10)
 
-        # 创建定时器：每 1.0 秒触发一次 timer_callback
+        # 创建定时器：每 0.5 秒触发一次 timer_callback
         # 【对应 Odin1】点云是 15Hz（约 0.067 秒一次），位姿最高 1000Hz
-        timer_period = 1.0
+        timer_period = 0.5
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
         # 计数器，用来让每条消息不一样
@@ -40,7 +40,7 @@ class Talker(Node):
     def timer_callback(self):
         """定时器到点就会执行这个函数"""
         msg = String()                          # 创建一个消息对象
-        msg.data = f'Hello World: {self.i}'     # 往消息里填数据
+        msg.data = f'Odin1 pose frame: {self.i}'     # 往消息里填数据
 
         self.publisher_.publish(msg)            # 发布！
 

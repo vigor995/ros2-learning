@@ -1,3 +1,4 @@
+import glob
 from setuptools import find_packages, setup
 
 package_name = 'my_first_nodes'
@@ -10,6 +11,7 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        ('share/' + package_name + '/launch', glob.glob('launch/*.py')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -26,6 +28,8 @@ setup(
         'console_scripts': [
             'talker = my_first_nodes.talker:main',
             'listener = my_first_nodes.listener:main',
+            'spy = my_first_nodes.spy:main',
+            'fake_odin = my_first_nodes.fake_odin:main',
         ],
     },
 )
