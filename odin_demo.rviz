@@ -9,6 +9,7 @@ Panels:
         - /Grid1
         - /PointCloud21
         - /PointCloud22
+        - /Odometry1
       Splitter Ratio: 0.5
     Tree Height: 368
   - Class: rviz_common/Selection
@@ -53,8 +54,8 @@ Visualization Manager:
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
-        Max Value: 0.3848406672477722
-        Min Value: 0.1243838220834732
+        Max Value: 0.46265316009521484
+        Min Value: 0.21691536903381348
         Value: true
       Axis: Z
       Channel Name: intensity
@@ -187,7 +188,7 @@ Visualization Manager:
           Value: true
         Value: true
       Enabled: true
-      Keep: 100
+      Keep: 1
       Name: Odometry
       Position Tolerance: 0.10000000149011612
       Shape:
