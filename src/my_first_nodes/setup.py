@@ -31,6 +31,7 @@ setup(
             'spy = my_first_nodes.spy:main',
             'fake_odin = my_first_nodes.fake_odin:main',
             'odin_pose_tf = my_first_nodes.odin_pose_tf:main',
+            'odin_odometry = my_first_nodes.odin_odometry:main',
         ],
     },
 )
