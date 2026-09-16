@@ -21,6 +21,8 @@ from rclpy.node import Node
 from std_msgs.msg import Header
 from sensor_msgs.msg import PointCloud2
 from sensor_msgs_py import point_cloud2
+from rclpy.duration import Duration
+
 
 
 class FakeOdin(Node):
@@ -50,7 +52,7 @@ class FakeOdin(Node):
 
         # 消息头：时间戳 + 坐标系名
         header = Header()
-        header.stamp = self.get_clock().now().to_msg()
+        header.stamp = (self.get_clock().now() - Duration(seconds=0.1)).to_msg()
         header.frame_id = 'odin1_link'      # ← RViz 里要用到这个名字！
 
         # 把点列表打包成 PointCloud2 消息
